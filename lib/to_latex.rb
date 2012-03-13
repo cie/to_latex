@@ -14,9 +14,7 @@ class String
       end
     end
 
-    @is_latex = true
-
-    self
+    self.latex!
   end
 
 
@@ -26,9 +24,18 @@ class String
     dup.to_latex!
   end
 
+  def to_latex_math
+    "$#{to_latex}$"
+  end
+
 
   def latex?
     defined?(@is_latex) && @is_latex
+  end
+
+  def latex!
+    @is_latex = true
+    self
   end
 
 end
@@ -38,5 +45,9 @@ end
 class Object
   def to_latex
     to_s.to_latex!
+  end
+
+  def to_latex_math
+    "$#{to_latex}$".latex!
   end
 end
