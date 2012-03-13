@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "to_latex"
   gem.homepage = "http://github.com/cie/to_latex"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Adds #to_latex to objects and strings to convert them to LaTeX.}
+  gem.description = %Q{Adds #to_latex to objects and strings.}
   gem.email = "kallo.bernat@gmail.com"
   gem.authors = ["Bernát Kalló"]
   # dependencies defined in Gemfile
