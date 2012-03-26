@@ -1,5 +1,5 @@
 module ToLatex
-  LATEX_SPECIAL_CHAR = /[\\{}$&\n#^_%~]/
+  LATEX_SPECIAL_CHAR = /[\\{}$&#^_%~]/
 
   DELIMITER_PAIRS = { 
     "$" => "$",
@@ -11,9 +11,9 @@ module ToLatex
   def self.escape s
     s.gsub(LATEX_SPECIAL_CHAR) do |c|
       case c
-      when "\\" then '\backslash'
-      when "^" then '\char94'
-      when '~' then '\char126'
+      when "\\" then '\backslash{}'
+      when "^" then '\^{}'
+      when '~' then '\~{}'
       else "\\#{c}"
       end
     end
