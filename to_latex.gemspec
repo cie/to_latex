@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "to_latex"
-  s.version = "0.3.1"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bern\u{e1}t Kall\u{f3}"]
-  s.date = "2012-03-26"
+  s.date = "2012-04-01"
   s.description = "Adds #to_latex to objects and strings. Works like html_safe in Rails 3, it escapes special characters as needed. Once converted, a string becomes a ToLatex::LatexString instance, with #latex? returning true, and never again will be escaped.\n    \n    You can concatenate any escaped or not escaped string to an escaped one, they get properly escaped.\n  \n  This gem powers texerb."
   s.email = "kallo.bernat@gmail.com"
   s.extra_rdoc_files = [
