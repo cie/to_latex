@@ -5,7 +5,8 @@ module ToLatex
     "$" => "$",
     "$$" => "$$",
     "\\(" => "\\)",
-    "\\[" => "\\]"
+    "\\[" => "\\]",
+    "\\ensuremath{" => "}"
   }
 
   def self.escape s
@@ -80,8 +81,8 @@ class Object
     to_s.to_latex
   end
 
-  # Convert an object to latex with escaping and adding $ $ or other delimiter around
-  def to_latex_math open = "$", close = nil
+  # Convert an object to latex with escaping and adding \ensuremath{}, $$ or other delimiter around
+  def to_latex_math open = "\\ensuremath{", close = nil
     close ||= ToLatex::DELIMITER_PAIRS[open] || open
     ToLatex::LatexString.new "#{open}#{to_latex}#{close}"
   end

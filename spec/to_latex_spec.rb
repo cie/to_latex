@@ -4,7 +4,7 @@ describe "ToLatex" do
   specify "String#to_latex" do
     '%'.to_latex.should == '\%'
     '!'.to_latex.should == '!'
-    '^'.to_latex.should == '\char94'
+    '^'.to_latex.should == '\^{}'
     'a'.to_latex.should == 'a'
 
     'a'.should_not be_latex
@@ -48,18 +48,16 @@ describe "ToLatex" do
   end
 
   specify "to_latex_math" do
-    5.to_latex_math.should == "$5$"
-    5.to_s.to_latex_math.should == "$5$"
-    5.to_s.to_latex.to_latex_math.should == "$5$"
-    5.to_s.to_latex.to_latex_math.to_latex.should == "$5$"
-    "a".to_latex_math.should == "$a$"
-    "a".to_s.to_latex_math.should == "$a$"
-    "a".to_s.to_latex.to_latex_math.should == "$a$"
-    "a".to_s.to_latex.to_latex_math.to_latex.should == "$a$"
-    "5%".to_latex_math.should == "$5\\%$"
-    "5%".to_s.to_latex_math.should == "$5\\%$"
-    "5%".to_s.to_latex.to_latex_math.should == "$5\\%$"
-    "5%".to_s.to_latex.to_latex_math.to_latex.should == "$5\\%$"
+    def check_to_latex_math source, result
+      source.to_latex_math.should == result
+      source.to_s.to_latex_math.should == result
+      source.to_s.to_latex.to_latex_math.should == result
+      source.to_s.to_latex.to_latex_math.to_latex.should == result
+    end
+
+    check_to_latex_math 5, "\\ensuremath{5}"
+    check_to_latex_math "a", "\\ensuremath{a}"
+    check_to_latex_math "5%", "\\ensuremath{5\\%}"
 
     "5%".to_latex_math("\\[").should == "\\[5\\%\\]"
     "5%".to_latex_math("\\(").should == "\\(5\\%\\)"
@@ -67,6 +65,7 @@ describe "ToLatex" do
     "5%".to_latex_math("$$").should == "$$5\\%$$"
     "5%".to_latex_math("a").should == "a5\\%a"
     "5%".to_latex_math("a","b").should == "a5\\%b"
+    "5%".to_latex_math("$","$").should == "$5\\%$"
   end
 
   specify "dup" do
