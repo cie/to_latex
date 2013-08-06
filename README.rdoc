@@ -1,6 +1,9 @@
 = to_latex
 
-Adds a .to_latex to Ruby objects
+Adds #to_latex to integers and strings. Works like html_safe in Rails, it escapes special characters as needed. Once converted, a string becomes a ToLatex::LatexString instance, with #latex? returning true, and never again will be escaped.
+
+You can concatenate any escaped or not escaped string to an escaped one, they get properly escaped.
+
 
 == Usage
 

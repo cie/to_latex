@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "to_latex"
   gem.homepage = "http://github.com/cie/to_latex"
   gem.license = "MIT"
-  gem.summary = %Q{Adds #to_latex to objects and strings to convert them to LaTeX.}
-  gem.description = %Q{Adds #to_latex to objects and strings. Works like html_safe in Rails 3, it escapes special characters as needed. Once converted, a string becomes a ToLatex::LatexString instance, with #latex? returning true, and never again will be escaped.
+  gem.summary = %Q{Adds #to_latex to integers and strings to convert them to LaTeX.}
+  gem.description = %Q{Adds #to_latex to integers and strings. Works like html_safe in Rails, it escapes special characters as needed. Once converted, a string becomes a ToLatex::LatexString instance, with #latex? returning true, and never again will be escaped.
     
     You can concatenate any escaped or not escaped string to an escaped one, they get properly escaped.
   
