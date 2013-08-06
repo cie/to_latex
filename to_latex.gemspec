@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = "to_latex"
-  s.version = "0.4.0"
+  s.version = "0.5.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bern\u{e1}t Kall\u{f3}"]
-  s.date = "2012-04-01"
-  s.description = "Adds #to_latex to objects and strings. Works like html_safe in Rails 3, it escapes special characters as needed. Once converted, a string becomes a ToLatex::LatexString instance, with #latex? returning true, and never again will be escaped.\n    \n    You can concatenate any escaped or not escaped string to an escaped one, they get properly escaped.\n  \n  This gem powers texerb."
+  s.date = "2013-08-06"
+  s.description = "Adds #to_latex to integers and strings. Works like html_safe in Rails, it escapes special characters as needed. Once converted, a string becomes a ToLatex::LatexString instance, with #latex? returning true, and never again will be escaped.\n    \n    You can concatenate any escaped or not escaped string to an escaped one, they get properly escaped.\n  \n  This gem powers texerb."
   s.email = "kallo.bernat@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -34,30 +34,27 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.15"
-  s.summary = "Adds #to_latex to objects and strings to convert them to LaTeX."
+  s.summary = "Adds #to_latex to integers and strings to convert them to LaTeX."
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<rspec>, ["~> 2.8.0"])
-      s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.8.3"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<rspec>, [">= 0"])
+      s.add_development_dependency(%q<rdoc>, [">= 0"])
+      s.add_development_dependency(%q<bundler>, [">= 0"])
+      s.add_development_dependency(%q<jeweler>, [">= 0"])
     else
-      s.add_dependency(%q<rspec>, ["~> 2.8.0"])
-      s.add_dependency(%q<rdoc>, ["~> 3.12"])
-      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_dependency(%q<jeweler>, ["~> 1.8.3"])
-      s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<rspec>, [">= 0"])
+      s.add_dependency(%q<rdoc>, [">= 0"])
+      s.add_dependency(%q<bundler>, [">= 0"])
+      s.add_dependency(%q<jeweler>, [">= 0"])
     end
   else
-    s.add_dependency(%q<rspec>, ["~> 2.8.0"])
-    s.add_dependency(%q<rdoc>, ["~> 3.12"])
-    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-    s.add_dependency(%q<jeweler>, ["~> 1.8.3"])
-    s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<rspec>, [">= 0"])
+    s.add_dependency(%q<rdoc>, [">= 0"])
+    s.add_dependency(%q<bundler>, [">= 0"])
+    s.add_dependency(%q<jeweler>, [">= 0"])
   end
 end
 
