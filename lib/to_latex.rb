@@ -75,7 +75,7 @@ end
 
 
 
-class Object
+module ToLatex::Convertible
   # Convert an object to latex with escaping
   def to_latex
     to_s.to_latex
@@ -87,4 +87,8 @@ class Object
     ToLatex::LatexString.new "#{open}#{to_latex}#{close}"
   end
 end
+
+[Integer, String].each do |c|
+  c.send :include, ToLatex::Convertible
+end 
 

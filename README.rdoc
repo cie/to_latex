@@ -2,8 +2,26 @@
 
 Adds a .to_latex to Ruby objects
 
+== Usage
+
+```ruby
+gem 'to_latex', '~>0.5.0'
+require 'to_latex'
+```
+
 == Features
 
+Strings and Integers are supported by default.
+
+```ruby
+s = ''.to_latex
+s << 'Hello 50% ' << '\LaTeX'.latex! << ' 50% Ruby!' # => "Hello 50\\% \\LaTeX 50\\% Ruby!"
+s.latex? # => true
+5.to_latex # => "5"
+5.to_latex_math # => "\\ensuremath{5}"
+```
+
+See spec/to\_latex.spec for further details.
 
 
 == Copyright
