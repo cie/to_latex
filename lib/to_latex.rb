@@ -12,7 +12,7 @@ module ToLatex
   def self.escape s
     s.gsub(LATEX_SPECIAL_CHAR) do |c|
       case c
-      when "\\" then '\backslash{}'
+      when "\\" then '\textbackslash{}'
       when "^" then '\^{}'
       when '~' then '\~{}'
       else "\\#{c}"
